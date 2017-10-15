@@ -29,7 +29,7 @@ public class PlaneController : MonoBehaviour {
 		_currentPosition -= _currentSpeed;
 		_transform.position = _currentPosition;
 
-		if (_currentPosition.x <= -840) {
+		if (_currentPosition.x <= -1000) {
 			Reset ();
 		}
 	}
@@ -41,7 +41,7 @@ public class PlaneController : MonoBehaviour {
 
 		_currentSpeed = new Vector2 (xSpeed, ySpeed);
 
-		float y = Random.Range (400, 600);
-		_transform.position = new Vector2 (840 + Random.Range (0, 100), y);
+		float y = Random.Range (200, 600);
+		_transform.position = new Vector2 (1000 + Random.Range (0, 100), y);
 	}
 }
