@@ -34,7 +34,7 @@ public class PlaneController : MonoBehaviour {
 		}
 	}
 
-	private void Reset(){
+	public void Reset(){
 
 		float xSpeed = Random.Range (minXspeed, maxXspeed);
 		float ySpeed = Random.Range (minYspeed, maxYspeed);

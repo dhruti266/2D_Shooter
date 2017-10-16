@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FirePointController : MonoBehaviour {
 
-	public float bulletForce = 10000f;
+	public float bulletForce = 15000f;
 	public Transform _bullet;
 //	public float collisionRadius = 0.5f;
 //	public bool collision = false;

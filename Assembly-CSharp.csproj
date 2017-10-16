@@ -53,9 +53,12 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BackgroundController.cs" />
      <Compile Include="Assets\Scripts\BulletController.cs" />
+     <Compile Include="Assets\Scripts\ExplosionDestroy.cs" />
      <Compile Include="Assets\Scripts\FirePointController.cs" />
+     <Compile Include="Assets\Scripts\PlaneCollision.cs" />
      <Compile Include="Assets\Scripts\PlaneController.cs" />
      <Compile Include="Assets\Scripts\TankBarrelController.cs" />
+     <Compile Include="Assets\Scripts\TankCollision.cs" />
      <Compile Include="Assets\Scripts\TankController.cs" />
  <Reference Include="UnityEngine.Analytics">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
