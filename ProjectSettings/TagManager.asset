@@ -6,6 +6,8 @@ TagManager:
   tags:
   - plane
   - enemy
+  - bullet
+  - enemy2
   layers:
   - Default
   - TransparentFX

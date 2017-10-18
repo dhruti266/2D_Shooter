@@ -5,9 +5,10 @@ using UnityEngine;
 public class TankCollision : MonoBehaviour {
 
 	[SerializeField]
-	GameObject explosion;
+	GameController gameController;
 
 	private AudioSource _tankSound;
+
 
 	// Use this for initialization
 	void Start () {
@@ -21,16 +22,31 @@ public class TankCollision : MonoBehaviour {
 			if (_tankSound != null) {
 				_tankSound.Play ();
 			}
-			Instantiate (explosion)
-				.GetComponent<Transform> ()
-				.position = other.gameObject
-					.GetComponent<Transform> ()
-					.position;
-
-			//other.gameObject.GetComponent<PlaneController> ().Reset ();
-				
+			//decrease life
+			Player.Instance.Life -= 1;
+			other.gameObject.GetComponent<PlaneController> ().Reset ();
+			StartCoroutine ("Blink");
 		}
+	}
 
+	private IEnumerator Blink(){
+		Color c;
+		Renderer renderer = gameObject.GetComponent<Renderer> ();
+		for (int i = 0; i < 3; i++) {
+			for (float f = 1f; f >= 0; f -= 0.1f) {
+				c = renderer.material.color;
+				c.a = f;
+				renderer.material.color = c;
+				yield return new WaitForSeconds(0.1f);
+			}
+
+			for (float f = 0f; f <= 1; f += 0.1f) {
+				c = renderer.material.color;
+				c.a = f;
+				renderer.material.color = c;
+				yield return new WaitForSeconds (0.1f);
+			}
+		}
 	}
 }
 	

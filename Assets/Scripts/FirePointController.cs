@@ -24,6 +24,7 @@ public class FirePointController : MonoBehaviour {
 
 	public void OnTriggerEnter2D(Collider2D target){
 
+		// fire bullet with allocated force
 		if (target.gameObject.tag == "plane")
 			GetComponent<Rigidbody2D> ().AddForce (transform.right * bulletForce);
 	}
