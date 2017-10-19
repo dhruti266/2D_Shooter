@@ -9,9 +9,10 @@ public class BulletController : MonoBehaviour {
 
 	void FixedUpdate(){
 
-		bool fire = Input.GetButtonDown ("Fire1");// when mouse left button is pressed
+		//bool fire = Input.GetButtonDown ("Fire1");// when mouse left button is pressed
 
-		if (fire)
+		if (Input.GetKeyDown("space"))
 			Instantiate (bullet, _transform.position, _transform.rotation);
+		
 	}
 }

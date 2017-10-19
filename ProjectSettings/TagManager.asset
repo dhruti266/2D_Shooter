@@ -4,10 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - plane
   - enemy
   - bullet
   - enemy2
+  - tank
   layers:
   - Default
   - TransparentFX

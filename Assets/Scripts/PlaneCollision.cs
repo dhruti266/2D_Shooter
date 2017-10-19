@@ -25,7 +25,6 @@ public class PlaneCollision : MonoBehaviour {
 	public void OnTriggerEnter2D (Collider2D other)
 	{
 		if (other.gameObject.tag.Equals ("enemy")) {
-			Debug.Log ("Collision detected\n");
 			if (_explosionSound != null) {
 				//Debug.Log ("audio detected\n");
 				_explosionSound.Play ();
@@ -46,7 +45,6 @@ public class PlaneCollision : MonoBehaviour {
 		}
 
 		if (other.gameObject.tag.Equals ("enemy2")) {
-			Debug.Log ("Collision detected\n");
 			if (_explosionSound != null) {
 				_explosionSound.Play ();
 			}

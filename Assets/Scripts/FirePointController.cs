@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FirePointController : MonoBehaviour {
 
-	public float bulletForce = 15000f;
+	public float bulletForce = 10000f;
 	public Transform _bullet;
 //	public float collisionRadius = 0.5f;
 //	public bool collision = false;
@@ -25,7 +25,7 @@ public class FirePointController : MonoBehaviour {
 	public void OnTriggerEnter2D(Collider2D target){
 
 		// fire bullet with allocated force
-		if (target.gameObject.tag == "plane")
+		if (target.gameObject.tag == "tank")
 			GetComponent<Rigidbody2D> ().AddForce (transform.right * bulletForce);
 	}
 
