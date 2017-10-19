@@ -32,7 +32,6 @@ public class Player{
 		set{ 
 			_life = value;
 
-
 			if (_life <= 0) {
 				//game over
 				gameCtrl.gameOver();

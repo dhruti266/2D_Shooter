@@ -38,7 +38,10 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void gameOver(){
+		Debug.Log (scoreLabel.text);
+		Debug.Log (Player.Instance.Life);
 		gameOverLabel.gameObject.SetActive (true);
+		highScoreLabel.text =  "High Score :" + Player.Instance.Score;
 		highScoreLabel.gameObject.SetActive (true);
 		resetBtn.gameObject.SetActive (true);
 
@@ -48,7 +51,7 @@ public class GameController : MonoBehaviour {
 	
 	public void updateUI(){
 		scoreLabel.text = "Score :" + Player.Instance.Score;
-		lifeLabel.text = "Life : " + Player.Instance.Life;
+		lifeLabel.text = "Life :" + Player.Instance.Life;
 	}
 
 	// Use this for initialization
@@ -58,7 +61,6 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void ResetBtnClick(){
-
 		SceneManager.
 		LoadScene (
 			SceneManager.GetActiveScene ().name);

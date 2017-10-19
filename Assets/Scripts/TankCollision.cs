@@ -27,6 +27,16 @@ public class TankCollision : MonoBehaviour {
 			other.gameObject.GetComponent<PlaneController> ().Reset ();
 			StartCoroutine ("Blink");
 		}
+		else if (other.gameObject.tag.Equals ("enemy2")) {
+			Debug.Log ("Collision detected\n");
+			if (_tankSound != null) {
+				_tankSound.Play ();
+			}
+			//decrease life
+			Player.Instance.Life -= 1;
+			other.gameObject.GetComponent<PlaneController> ().Reset ();
+			StartCoroutine ("Blink");
+		}
 	}
 
 	private IEnumerator Blink(){
