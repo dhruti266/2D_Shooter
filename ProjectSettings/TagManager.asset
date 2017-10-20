@@ -8,6 +8,7 @@ TagManager:
   - bullet
   - enemy2
   - tank
+  - coin
   layers:
   - Default
   - TransparentFX

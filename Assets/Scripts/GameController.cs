@@ -34,7 +34,7 @@ public class GameController : MonoBehaviour {
 
 		lifeLabel.gameObject.SetActive (true);
 		scoreLabel.gameObject.SetActive (true);
-		StartCoroutine ("AddEnemy");
+		//StartCoroutine ("AddEnemy");
 	}
 
 	public void gameOver(){

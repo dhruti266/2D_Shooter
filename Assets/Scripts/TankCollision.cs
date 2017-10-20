@@ -9,17 +9,32 @@ public class TankCollision : MonoBehaviour {
 
 	[SerializeField]
 	GameObject tankBarrel;
-
+	[SerializeField]
+	GameObject coin;
 	private AudioSource _tankSound;
+	private AudioSource _coinSound;
 
 
 	// Use this for initialization
 	void Start () {
 		_tankSound = gameObject.GetComponent<AudioSource> ();
+		_coinSound = gameObject.GetComponent<AudioSource> ();
 	}
 
 	public void OnTriggerEnter2D (Collider2D other)
 	{
+		if (other.gameObject.tag.Equals ("coin")) {
+			Debug.Log ("Coin Collision detected\n");
+			if (_coinSound != null) {
+				//Debug.Log ("audio detected\n");
+				_coinSound.Play ();
+			}
+
+			//Add Points
+			Player.Instance.Score += 20;
+			other.gameObject.GetComponent<CoinController> ().Reset ();
+
+		}
 		if (other.gameObject.tag.Equals ("enemy") || other.gameObject.tag.Equals ("enemy2")) {
 			_tankSound.Play ();
 

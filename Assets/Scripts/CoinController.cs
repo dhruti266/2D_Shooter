@@ -20,6 +20,7 @@ public class CoinController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		_transform = gameObject.GetComponent<Transform> ();
+		_currentPosition = _transform.position;
 		Reset ();
 	}
 
@@ -29,7 +30,7 @@ public class CoinController : MonoBehaviour {
 		_currentPosition -= _currentSpeed;
 		_transform.position = _currentPosition;
 
-		if (_currentPosition.y <= -630) {
+		if (_currentPosition.y <= -550) {
 			Reset ();
 		}
 	}
@@ -41,11 +42,11 @@ public class CoinController : MonoBehaviour {
 
 		_currentSpeed = new Vector2 (xSpeed, ySpeed);
 
-		float x = Random.Range (-300, 300); 
+		float x = Random.Range (-100, 100); 
 		_transform.position = 
-			new Vector2 (x, 630 + Random.Range (0, 100));
+			new Vector2 (x, 600 + Random.Range (0, 100));
 
-		float y = Random.Range (200, 600);
+		float y = Random.Range (200, 500);
 		_transform.position = new Vector2 (0, y);
 	}
 }
