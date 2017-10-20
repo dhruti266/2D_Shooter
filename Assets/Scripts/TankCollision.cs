@@ -2,7 +2,7 @@
  * File : TankCollision.cs
  * Author : Dhruti Parekh
  * Last Modified By : Dhruti Parekh
- * Date Last Modified :
+ * Date Last Modified : October 21, 2017
  * Program Description : This script is used to detect the collision of tank with the enemies (i.e Planes) 
  * 						 as well as collision with coins to collect the points
  * Revision History : v1.0
@@ -22,20 +22,23 @@ public class TankCollision : MonoBehaviour {
 	GameObject tankBarrel;
 	[SerializeField]
 	GameObject coin;
+	private AudioSource[] sounds;
 	private AudioSource _tankSound;
 	private AudioSource _coinSound;
 
 
 	// Use this for initialization
 	void Start () {
-		_tankSound = gameObject.GetComponent<AudioSource> ();
-		_coinSound = gameObject.GetComponent<AudioSource> ();
+		sounds = GetComponents<AudioSource>();
+		_coinSound = sounds[0];
+		_tankSound = sounds[1];
 	}
 
 	public void OnTriggerEnter2D (Collider2D other)
 	{	
 		if (other.gameObject.tag.Equals ("enemy") || other.gameObject.tag.Equals ("enemy2")) {
-			_tankSound.Play ();
+			if(_tankSound != null)
+				_tankSound.Play ();
 
 			//decrease life
 			Player.Instance.Life -= 1;
@@ -46,7 +49,6 @@ public class TankCollision : MonoBehaviour {
 		if (other.gameObject.tag.Equals ("coin")) {
 			Debug.Log ("Coin Collision detected\n");
 			if (_coinSound != null) {
-				//Debug.Log ("audio detected\n");
 				_coinSound.Play ();
 			}
 

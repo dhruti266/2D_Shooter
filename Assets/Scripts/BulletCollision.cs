@@ -2,7 +2,7 @@
  * File : BulletCollision.cs
  * Author : Dhruti Parekh
  * Last Modified By : Dhruti Parekh
- * Date Last Modified :
+ * Date Last Modified : October 21, 2017
  * Program Description : This script is used to detect the collison of bullet with enemies (i.e Planes) and create explosion.
  * Revision History : v1.0
  */
@@ -23,6 +23,7 @@ public class BulletCollision : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		_explosionSound = gameObject.GetComponent<AudioSource> ();
+		_explosionSound.Play ();
 	}
 
 	// detect the collison with planes

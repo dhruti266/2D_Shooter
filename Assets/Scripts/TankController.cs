@@ -2,7 +2,7 @@
  * File : TankCollision.cs
  * Author : Dhruti Parekh
  * Last Modified By : Dhruti Parekh
- * Date Last Modified :
+ * Date Last Modified : October 21, 2017
  * Program Description : This script is used to get control over the tank and move it either left or right
  * Revision History : v1.0
  */

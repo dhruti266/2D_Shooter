@@ -2,7 +2,7 @@
  * File : Player.cs
  * Author : Dhruti Parekh
  * Last Modified By : Dhruti Parekh
- * Date Last Modified :
+ * Date Last Modified : October 21, 2017
  * Program Description : This script has Score and Life get, set properties to update 
  * Revision History : v1.0
  */

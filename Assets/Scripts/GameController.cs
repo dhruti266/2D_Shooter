@@ -2,7 +2,7 @@
  * File : GameController.cs
  * Author : Dhruti Parekh
  * Last Modified By : Dhruti Parekh
- * Date Last Modified :
+ * Date Last Modified :October 21, 2017
  * Program Description : This script is used to get control on Canvas elements.
  * Revision History : v1.0
  */
