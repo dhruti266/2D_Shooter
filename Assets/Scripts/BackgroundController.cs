@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*	
+ * File : BackgroundController.cs
+ * Author : Dhruti Parekh
+ * Last Modified By : Dhruti Parekh
+ * Date Last Modified :
+ * Program Description : This script is used to rotate background from right to left
+ * Revision History : v1.0
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,31 +20,31 @@ public class BackgroundController : MonoBehaviour {
 	[SerializeField]
 	private float endX;	
 
-	private Transform _transform = null;
+	private Transform _backgroundTransform = null;
 	private Vector2 _currentPos;
 
 	// Use this for initialization
 	void Start () {
-		_transform = gameObject.GetComponent<Transform>();
-		_currentPos = _transform.position;
+		_backgroundTransform = gameObject.GetComponent<Transform>();
+		_currentPos = _backgroundTransform.position;
 		Reset ();
 	}
 	
-	// Update is called once per frame
+	// updates the position of an object
 	void Update () {
-		_currentPos = _transform.position;
+		_currentPos = _backgroundTransform.position;
 
-		// changing the X value according to given speed and move the object from right to left
 		_currentPos -= new Vector2 (speed, 0); 
-		_transform.position = _currentPos;
+		_backgroundTransform.position = _currentPos;
 
 		if(_currentPos.x < endX){
 			Reset ();
 		}
 	}
-	
+
+	// reset the background object to rotate right to left from the start position
 	private	void Reset(){
-		_transform.position = new Vector2(startX, 0);
+		_backgroundTransform.position = new Vector2(startX, 0);
 	}
 
 	

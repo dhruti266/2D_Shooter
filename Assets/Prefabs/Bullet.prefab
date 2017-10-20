@@ -25,7 +25,8 @@ GameObject:
   - component: {fileID: 114075020501813300}
   - component: {fileID: 82608354648663822}
   - component: {fileID: 114409302315860478}
-  - component: {fileID: 114720259229715508}
+  - component: {fileID: 114084492758070676}
+  - component: {fileID: 82056213643636698}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: bullet
@@ -96,6 +97,86 @@ PolygonCollider2D:
       - {x: 0.21499999, y: -0.13}
       - {x: 0.275, y: -0.06}
       - {x: 0.275, y: 0.089999996}
+--- !u!82 &82056213643636698
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1166626474563518}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: aabaa627639e44d0f9198dc735f84ba4, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!82 &82608354648663822
 AudioSource:
   m_ObjectHideFlags: 1
@@ -189,6 +270,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletForce: 15000
   _bullet: {fileID: 4352176504376502}
+--- !u!114 &114084492758070676
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1166626474563518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 972f2b89c85e74c329e5dfc5babb6bf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameController: {fileID: 0}
+  explosion: {fileID: 1436975035496536, guid: 5231e5b99f7b94ac78e48c6a8f2afd35, type: 2}
 --- !u!114 &114409302315860478
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -201,21 +295,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RoomSize: 0
---- !u!114 &114720259229715508
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1166626474563518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 893c909d74b7240348490250737108b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameController: {fileID: 0}
-  explosion: {fileID: 1436975035496536, guid: 5231e5b99f7b94ac78e48c6a8f2afd35, type: 2}
-  bullet: {fileID: 1166626474563518}
-  _explosionSound: {fileID: 0}
 --- !u!212 &212248065981101586
 SpriteRenderer:
   m_ObjectHideFlags: 1

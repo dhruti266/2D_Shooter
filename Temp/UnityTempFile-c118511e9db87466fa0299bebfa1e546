@@ -100,13 +100,12 @@
 -define:ENABLE_NATIVE_ARRAY_CHECKS
 -define:UNITY_TEAM_LICENSE
 'Assets/Scripts/BackgroundController.cs'
+'Assets/Scripts/BulletCollision.cs'
 'Assets/Scripts/BulletController.cs'
-'Assets/Scripts/CoinCollision.cs'
 'Assets/Scripts/CoinController.cs'
 'Assets/Scripts/ExplosionDestroy.cs'
 'Assets/Scripts/FirePointController.cs'
 'Assets/Scripts/GameController.cs'
-'Assets/Scripts/PlaneCollision.cs'
 'Assets/Scripts/PlaneController.cs'
 'Assets/Scripts/Player.cs'
 'Assets/Scripts/TankBarrelController.cs'

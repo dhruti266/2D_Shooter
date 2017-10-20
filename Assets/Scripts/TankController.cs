@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*	
+ * File : TankCollision.cs
+ * Author : Dhruti Parekh
+ * Last Modified By : Dhruti Parekh
+ * Date Last Modified :
+ * Program Description : This script is used to get control over the tank and move it either left or right
+ * Revision History : v1.0
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,17 +20,17 @@ public class TankController : MonoBehaviour {
 	[SerializeField]
 	private float rightX;
 
-	private Transform _transform = null;
+	private Transform _tankTransform = null;
 	private Vector2 _currentPos;
 
 	// Use this for initialization
 	void Start () {
-		_transform = gameObject.GetComponent<Transform> ();
+		_tankTransform = gameObject.GetComponent<Transform> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		_currentPos = _transform.position;
+		_currentPos = _tankTransform.position;
 
 		//move left
 		if(Input.GetKey(KeyCode.A)){
@@ -36,10 +45,10 @@ public class TankController : MonoBehaviour {
 		//check the bounds
 		CheckBoundry ();
 
-		//apply changes
-		_transform.position = _currentPos;
+		_tankTransform.position = _currentPos;
 	}
 
+	// chek the bounds to move the tank
 	private void CheckBoundry(){
 		if (_currentPos.x < leftX) {
 			_currentPos.x = leftX;

@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*	
+ * File : CoinController.cs
+ * Author : Dhruti Parekh
+ * Last Modified By : Dhruti Parekh
+ * Date Last Modified :
+ * Program Description : This script is used to drop coins randomly.
+ * Revision History : v1.0
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,28 +22,29 @@ public class CoinController : MonoBehaviour {
 	[SerializeField]
 	float maxXSpeed = 2f;
 
-	private Transform _transform;
+	private Transform _coinTransform;
 	private Vector2 _currentSpeed;
 	private Vector2 _currentPosition;
 
 	// Use this for initialization
 	void Start () {
-		_transform = gameObject.GetComponent<Transform> ();
-		_currentPosition = _transform.position;
+		_coinTransform = gameObject.GetComponent<Transform> ();
+		_currentPosition = _coinTransform.position;
 		Reset ();
 	}
 
-	// Update is called once per frame
+	// updates the position of an object
 	void Update () {
-		_currentPosition = _transform.position;
+		_currentPosition = _coinTransform.position;
 		_currentPosition -= _currentSpeed;
-		_transform.position = _currentPosition;
+		_coinTransform.position = _currentPosition;
 
 		if (_currentPosition.y <= -550) {
 			Reset ();
 		}
 	}
 
+	// adds coins randomly with allocated speed and moves from top to bottom
 	public void Reset(){
 
 		float xSpeed = Random.Range (minXSpeed, maxXSpeed);
@@ -43,10 +53,10 @@ public class CoinController : MonoBehaviour {
 		_currentSpeed = new Vector2 (xSpeed, ySpeed);
 
 		float x = Random.Range (-100, 100); 
-		_transform.position = 
+		_coinTransform.position = 
 			new Vector2 (x, 600 + Random.Range (0, 100));
 
 		float y = Random.Range (200, 500);
-		_transform.position = new Vector2 (0, y);
+		_coinTransform.position = new Vector2 (0, y);
 	}
 }

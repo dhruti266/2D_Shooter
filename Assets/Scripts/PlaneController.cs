@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*	
+ * File : PlaneController.cs
+ * Author : Dhruti Parekh
+ * Last Modified By : Dhruti Parekh
+ * Date Last Modified :
+ * Program Description : This script is used to place planes randomly on scene with allocated speed.
+ * Revision History : v1.0
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,21 +22,21 @@ public class PlaneController : MonoBehaviour {
 	[SerializeField]
 	float maxYspeed = 2f;
 
-	private Transform _transform;
+	private Transform _planeTransform;
 	private Vector2 _currentSpeed;
 	private Vector2 _currentPosition;
 
 	// Use this for initialization
 	void Start () {
-		_transform = gameObject.GetComponent<Transform> ();
+		_planeTransform = gameObject.GetComponent<Transform> ();
 		Reset ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		_currentPosition = _transform.position;
+		_currentPosition = _planeTransform.position;
 		_currentPosition -= _currentSpeed;
-		_transform.position = _currentPosition;
+		_planeTransform.position = _currentPosition;
 
 		if (_currentPosition.x <= -1000) {
 			Reset ();
@@ -42,6 +51,6 @@ public class PlaneController : MonoBehaviour {
 		_currentSpeed = new Vector2 (xSpeed, ySpeed);
 
 		float y = Random.Range (200, 600);
-		_transform.position = new Vector2 (1000 + Random.Range (0, 100), y);
+		_planeTransform.position = new Vector2 (1000 + Random.Range (0, 100), y);
 	}
 }

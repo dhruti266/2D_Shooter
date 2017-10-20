@@ -1,10 +1,19 @@
-﻿using System.Collections;
+﻿/*	
+ * File : Player.cs
+ * Author : Dhruti Parekh
+ * Last Modified By : Dhruti Parekh
+ * Date Last Modified :
+ * Program Description : This script has Score and Life get, set properties to update 
+ * Revision History : v1.0
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Player{
 
-	public GameController gameCtrl;
+	public GameController gameController;
 	private static Player _instance;
 
 	public static Player Instance{
@@ -22,7 +31,7 @@ public class Player{
 		get{ return _score; }
 		set{ 
 			_score = value;
-			gameCtrl.updateUI();
+			gameController.updateUI();
 		}
 
 	}
@@ -34,10 +43,10 @@ public class Player{
 
 			if (_life <= 0) {
 				//game over
-				gameCtrl.gameOver();
+				gameController.gameOver();
 
 			}else{
-				gameCtrl.updateUI();
+				gameController.updateUI();
 			}
 		}
 	}

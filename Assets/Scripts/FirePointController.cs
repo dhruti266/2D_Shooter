@@ -1,23 +1,23 @@
-﻿using System.Collections;
+﻿/*	
+ * File : FirePointController.cs
+ * Author : Dhruti Parekh
+ * Last Modified By : Dhruti Parekh
+ * Date Last Modified :
+ * Program Description : This script is used to fire bullet from the tank barrel with allocated force 
+ * Revision History : v1.0
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class FirePointController : MonoBehaviour {
 
 	public float bulletForce = 10000f;
-	public Transform _bullet;
-//	public float collisionRadius = 0.5f;
-//	public bool collision = false;
-//	public LayerMask collideWith;
 
 	void FixedUpdate (){
-//		collision = Physics2D.OverlapCircle (_bullet.position, collisionRadius,	collideWith);
 
-//		//destroys the bullet when collision occurs with ground
-//		if (collision)
-//			Destroy (gameObject);
-
-		// destroy the bullet when it is not visible in camera view
+		// destroy the bullet prefab when it is not visible in camera view
 		if (!GetComponent<Renderer> ().isVisible)
 			Destroy (gameObject);
 	}

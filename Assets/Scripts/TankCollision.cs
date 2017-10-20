@@ -1,4 +1,15 @@
-﻿using System.Collections;
+﻿/*	
+ * File : TankCollision.cs
+ * Author : Dhruti Parekh
+ * Last Modified By : Dhruti Parekh
+ * Date Last Modified :
+ * Program Description : This script is used to detect the collision of tank with the enemies (i.e Planes) 
+ * 						 as well as collision with coins to collect the points
+ * Revision History : v1.0
+ */
+
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,7 +33,16 @@ public class TankCollision : MonoBehaviour {
 	}
 
 	public void OnTriggerEnter2D (Collider2D other)
-	{
+	{	
+		if (other.gameObject.tag.Equals ("enemy") || other.gameObject.tag.Equals ("enemy2")) {
+			_tankSound.Play ();
+
+			//decrease life
+			Player.Instance.Life -= 1;
+			other.gameObject.GetComponent<PlaneController> ().Reset ();
+			StartCoroutine ("Blink");
+		}
+
 		if (other.gameObject.tag.Equals ("coin")) {
 			Debug.Log ("Coin Collision detected\n");
 			if (_coinSound != null) {
@@ -35,16 +55,9 @@ public class TankCollision : MonoBehaviour {
 			other.gameObject.GetComponent<CoinController> ().Reset ();
 
 		}
-		if (other.gameObject.tag.Equals ("enemy") || other.gameObject.tag.Equals ("enemy2")) {
-			_tankSound.Play ();
-
-			//decrease life
-			Player.Instance.Life -= 1;
-			other.gameObject.GetComponent<PlaneController> ().Reset ();
-			StartCoroutine ("Blink");
-		}
 	}
 
+	// when collision occurs tank and tank barrel blink
 	private IEnumerator Blink(){
 		Color t, b;
 		Renderer tankRenderer = gameObject.GetComponent<Renderer> ();
