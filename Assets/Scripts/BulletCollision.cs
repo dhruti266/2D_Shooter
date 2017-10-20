@@ -23,7 +23,6 @@ public class BulletCollision : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		_explosionSound = gameObject.GetComponent<AudioSource> ();
-		_explosionSound.Play ();
 	}
 
 	// detect the collison with planes
